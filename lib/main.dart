@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:desktop_window/desktop_window.dart';
 
 import 'left_panel.dart';
-// import 'pages/right_panel.dart';
+import 'pages/right_panel.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             LeftPanel(),
-            // RightPanel(),
+            RightPanel(),
           ],
         ),
       ),
