@@ -1,5 +1,5 @@
 // import 'package:ams_prototype/widgets/bottom_row.dart';
-// import 'package:ams_prototype/widgets/center_row.dart';
+import 'package:ams_prototype/widgets/center_row.dart';
 import 'package:ams_prototype/widgets/top_row.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +20,7 @@ class RightPanel extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const TopRow(),
-              // const CenterRow(),
+              const CenterRow(),
               SizedBox(
                 height: MediaQuery.of(context).size.width / 50,
               ),
