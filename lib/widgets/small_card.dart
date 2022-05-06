@@ -71,6 +71,70 @@ class _SmallCardState extends State<SmallCard> {
           SizedBox(
             width: MediaQuery.of(context).size.width / 70,
           ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                widget.title,
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 161, 160, 160),
+                  fontSize: MediaQuery.of(context).size.width / 80,
+                  fontWeight: FontWeight.w700,
+                  fontFamily: "Calibri",
+                ),
+              ),
+              const SizedBox(
+                height: 3.0,
+              ),
+              Text(
+                "\$${widget.amount}",
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 42, 82, 82),
+                  fontSize: MediaQuery.of(context).size.width / 45,
+                  fontWeight: FontWeight.w700,
+                  fontFamily: "Calibri",
+                ),
+              )
+            ],
+          ),
+          const Spacer(),
+          Icon(
+            widget.negative
+                ? CupertinoIcons.arrow_down_circle_fill
+                : CupertinoIcons.arrow_up_circle_fill,
+            color: widget.negative
+                ? const Color.fromARGB(255, 255, 44, 64)
+                : Colors.greenAccent,
+            size: MediaQuery.of(context).size.width / 60,
+          ),
+          const SizedBox(
+            width: 5.0,
+          ),
+          widget.negative
+              ? Padding(
+                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 2.0),
+                  child: Text(
+                    "-${widget.percentage}%",
+                    style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.width / 80,
+                      fontWeight: FontWeight.w600,
+                      color: const Color.fromARGB(255, 255, 44, 64),
+                    ),
+                  ),
+                )
+              : Padding(
+                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 2.0),
+                  child: Text(
+                    "+${widget.percentage}%",
+                    style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.width / 80,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.greenAccent,
+                    ),
+                  ),
+                ),
+          const Spacer(),
         ],
       ),
     );
