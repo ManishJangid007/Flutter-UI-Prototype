@@ -71,32 +71,34 @@ class _SmallCardState extends State<SmallCard> {
           SizedBox(
             width: MediaQuery.of(context).size.width / 70,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                widget.title,
-                style: TextStyle(
-                  color: const Color.fromARGB(255, 161, 160, 160),
-                  fontSize: MediaQuery.of(context).size.width / 80,
-                  fontWeight: FontWeight.w700,
-                  fontFamily: "Calibri",
+          SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  widget.title,
+                  style: TextStyle(
+                    color: const Color.fromARGB(255, 161, 160, 160),
+                    fontSize: MediaQuery.of(context).size.width / 80,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: "Calibri",
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 3.0,
-              ),
-              Text(
-                "\$${widget.amount}",
-                style: TextStyle(
-                  color: const Color.fromARGB(255, 42, 82, 82),
-                  fontSize: MediaQuery.of(context).size.width / 45,
-                  fontWeight: FontWeight.w700,
-                  fontFamily: "Calibri",
+                const SizedBox(
+                  height: 3.0,
                 ),
-              )
-            ],
+                Text(
+                  "\$${widget.amount}",
+                  style: TextStyle(
+                    color: const Color.fromARGB(255, 42, 82, 82),
+                    fontSize: MediaQuery.of(context).size.width / 45,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: "Calibri",
+                  ),
+                )
+              ],
+            ),
           ),
           const Spacer(),
           Icon(

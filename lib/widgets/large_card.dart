@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'large_card_assets/first_row.dart';
+import 'large_card_assets/graph.dart';
 
 class LargeCard extends StatefulWidget {
   LargeCard({Key? key}) : super(key: key);
@@ -29,15 +30,21 @@ class _LargeCardState extends State<LargeCard> {
           ),
         ],
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.width / 70,
-          ),
-          const FirstRow(),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.width / 70,
+            ),
+            const FirstRow(),
+            SizedBox(
+              height: MediaQuery.of(context).size.width / 70,
+            ),
+            const Graph(),
+          ],
+        ),
       ),
     );
   }
