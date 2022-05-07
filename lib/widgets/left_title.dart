@@ -40,7 +40,7 @@ class LeftTitle extends StatelessWidget {
           ),
           const Flexible(
             child: Text(
-              "Attendance Manager",
+              "Sales Manager",
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.w600,
