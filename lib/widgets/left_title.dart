@@ -25,7 +25,7 @@ class LeftTitle extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 3.0),
                 child: Text(
-                  "A",
+                  "S",
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.w700,
