@@ -8,6 +8,102 @@ class Graph extends StatelessWidget {
     return Stack(
       children: const [
         GraphBase(),
+        DataBars(),
+      ],
+    );
+  }
+}
+
+class DataBars extends StatelessWidget {
+  const DataBars({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    double horizontalGap = 39;
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height / 3.75,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          SizedBox(
+            width: MediaQuery.of(context).size.width / 20.6,
+          ),
+          Bars(inHeight: 7.5, outHeight: 5.1),
+          SizedBox(
+            width: MediaQuery.of(context).size.width / horizontalGap,
+          ),
+          Bars(inHeight: 12, outHeight: 4.3),
+          SizedBox(
+            width: MediaQuery.of(context).size.width / horizontalGap,
+          ),
+          Bars(inHeight: 5.8, outHeight: 8.0),
+          SizedBox(
+            width: MediaQuery.of(context).size.width / horizontalGap,
+          ),
+          Bars(inHeight: 9.0, outHeight: 5.5),
+          SizedBox(
+            width: MediaQuery.of(context).size.width / horizontalGap,
+          ),
+          Bars(inHeight: 9.0, outHeight: 6.8),
+          SizedBox(
+            width: MediaQuery.of(context).size.width / horizontalGap,
+          ),
+          Bars(inHeight: 4.8, outHeight: 10.0),
+          SizedBox(
+            width: MediaQuery.of(context).size.width / horizontalGap,
+          ),
+          Bars(inHeight: 9.0, outHeight: 4.2),
+          SizedBox(
+            width: MediaQuery.of(context).size.width / horizontalGap,
+          ),
+          Bars(inHeight: 4.8, outHeight: 10.0),
+        ],
+      ),
+    );
+  }
+}
+
+class Bars extends StatelessWidget {
+  double inHeight;
+  double outHeight;
+  Bars({
+    Key? key,
+    required this.inHeight,
+    required this.outHeight,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    double width = 75;
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Container(
+          width: MediaQuery.of(context).size.width / width,
+          height: MediaQuery.of(context).size.height / inHeight,
+          decoration: BoxDecoration(
+            color: const Color.fromARGB(255, 26, 209, 152),
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(MediaQuery.of(context).size.width / 350),
+            ),
+          ),
+        ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width / 200,
+        ),
+        Container(
+          width: MediaQuery.of(context).size.width / width,
+          height: MediaQuery.of(context).size.height / outHeight,
+          decoration: BoxDecoration(
+            color: const Color.fromARGB(255, 20, 140, 255),
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(MediaQuery.of(context).size.width / 350),
+            ),
+          ),
+        ),
       ],
     );
   }
