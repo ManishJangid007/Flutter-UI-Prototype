@@ -59,7 +59,7 @@ class MediumCard extends StatelessWidget {
           ),
           Expanded(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(25.0, 30.0, 25.0, 10.0),
+              padding: const EdgeInsets.fromLTRB(25.0, 30.0, 22.0, 10.0),
               child: Column(
                 children: [
                   Item(

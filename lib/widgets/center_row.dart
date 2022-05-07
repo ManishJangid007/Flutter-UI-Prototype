@@ -13,9 +13,12 @@ class CenterRow extends StatelessWidget {
   Widget build(BuildContext context) {
     double gap = 45;
     return SingleChildScrollView(
+      reverse: false,
       padding: const EdgeInsets.fromLTRB(40.0, 50.0, 20.0, 5.0),
       scrollDirection: Axis.horizontal,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
