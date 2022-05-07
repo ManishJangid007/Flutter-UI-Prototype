@@ -1,14 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MediumCard extends StatelessWidget {
-  const MediumCard({Key? key}) : super(key: key);
+class MediumCard2 extends StatelessWidget {
+  MediumCard2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width / 4.9,
-      height: MediaQuery.of(context).size.height / 3,
+      height: MediaQuery.of(context).size.height / 4.4,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(
@@ -33,7 +32,7 @@ class MediumCard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(25.0, 15.0, 0.0, 0.0),
                 child: Text(
-                  "Recent Transaction",
+                  "Sales",
                   style: TextStyle(
                     fontFamily: "Calibri",
                     fontSize: MediaQuery.of(context).size.width / 75,
@@ -59,44 +58,39 @@ class MediumCard extends StatelessWidget {
           ),
           Expanded(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(25.0, 30.0, 25.0, 10.0),
+              padding: const EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 10.0),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Item(
-                    icon: CupertinoIcons.camera_fill,
-                    title: "Camera Canon",
-                    date: "2 January 2021",
-                    amount: "29,23",
+                    img: const AssetImage("assets/IMG_6747.PNG"),
+                    title: "Ikhwata Andy",
+                    id: "12804889939",
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.width / 65,
+                    height: MediaQuery.of(context).size.width / 200,
+                  ),
+                  const Divider(),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.width / 200,
                   ),
                   Item(
-                    icon: CupertinoIcons.paintbrush_fill,
-                    title: "Makeup",
-                    date: "15 January 2021",
-                    amount: "12,88",
+                    img: const AssetImage("assets/IMG_6754.jpeg"),
+                    title: "Timo Werner",
+                    id: "14812391239",
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.width / 65,
+                    height: MediaQuery.of(context).size.width / 200,
+                  ),
+                  const Divider(),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.width / 200,
                   ),
                   Item(
-                    icon: Icons.headphones_rounded,
-                    title: "Headphone",
-                    date: "28 January 2021",
-                    amount: "32,92",
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.width / 65,
-                  ),
-                  Item(
-                    icon: Icons.earbuds_rounded,
-                    title: "Earphones",
-                    date: "28 January 2021",
-                    amount: "25,87",
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.width / 100,
+                    img: const AssetImage("assets/legion.png"),
+                    title: "Jimmy Parker",
+                    id: "88452654539",
                   ),
                 ],
               ),
@@ -109,16 +103,14 @@ class MediumCard extends StatelessWidget {
 }
 
 class Item extends StatefulWidget {
-  IconData icon;
+  AssetImage img;
   String title;
-  String date;
-  String amount;
+  String id;
   Item({
     Key? key,
-    required this.icon,
+    required this.img,
     required this.title,
-    required this.date,
-    required this.amount,
+    required this.id,
   }) : super(key: key);
 
   @override
@@ -133,16 +125,14 @@ class _ItemState extends State<Item> {
         Container(
           height: MediaQuery.of(context).size.width / 30,
           width: MediaQuery.of(context).size.width / 30,
-          decoration: const BoxDecoration(
-            color: Color.fromARGB(255, 224, 235, 237),
-            borderRadius: BorderRadius.all(
+          decoration: BoxDecoration(
+            color: Colors.greenAccent,
+            borderRadius: const BorderRadius.all(
               Radius.circular(10.0),
             ),
-          ),
-          child: Center(
-            child: Icon(
-              widget.icon,
-              color: const Color.fromARGB(255, 71, 89, 90),
+            image: DecorationImage(
+              image: widget.img,
+              fit: BoxFit.cover,
             ),
           ),
         ),
@@ -163,7 +153,7 @@ class _ItemState extends State<Item> {
               ),
             ),
             Text(
-              widget.date,
+              "ID : ${widget.id}",
               style: TextStyle(
                 fontSize: MediaQuery.of(context).size.width / 100,
                 fontFamily: "Calibri",
@@ -172,16 +162,6 @@ class _ItemState extends State<Item> {
               ),
             )
           ],
-        ),
-        const Spacer(),
-        Text(
-          "\$${widget.amount}",
-          style: TextStyle(
-            fontSize: MediaQuery.of(context).size.width / 80,
-            fontFamily: "Calibri",
-            fontWeight: FontWeight.bold,
-            color: const Color.fromARGB(255, 42, 82, 82),
-          ),
         ),
       ],
     );
